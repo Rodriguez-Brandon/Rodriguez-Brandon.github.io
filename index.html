@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>El Zodiaco</title>
@@ -12,9 +12,9 @@
            flex-direction: column;
            height: 100vh;
            margin: 0;
-           background: url('vl.png') no-repeat center center fixed; /* Asegúrate de que la ruta sea correcta */
-           background-size: cover; /* Cubre toda el área del body */
-           overflow: hidden; /* Oculta el contenido que se desborda */
+           background: url('vl.png') no-repeat center center fixed;
+           background-size: cover;
+           overflow: hidden;
         }
         .content-container {
             display: flex;
@@ -55,10 +55,10 @@
             opacity: 1;
         }
         .play-button-wrapper {
-            position: fixed; /* Ahora todo el contenedor de botones está fijo */
+            position: fixed;
             top: 10px;
             left: 10px;
-            z-index: 1000; /* Aseguramos que se quede arriba del contenido */
+            z-index: 1000;
         }
         .play-button {
             padding: 10px;
@@ -85,6 +85,18 @@
             margin-top: 10px;
             padding: 8px;
             width: 100%;
+        }
+        .sign-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1001;
+        }
+        .sign-image.show {
+            opacity: 1;
         }
     </style>
 </head>
@@ -125,6 +137,8 @@
     </div>
 </div>
 
+<img id="sign-image" class="sign-image" src="" alt="Signo Zodiacal">
+
 <script>
     function toggleAudio() {
         let audio = document.getElementById("background-audio");
@@ -133,6 +147,48 @@
         } else {
             audio.pause();
         }
+    }
+
+    function calcularSigno() {
+        const birthdate = new Date(document.getElementById("birthdate").value);
+        const month = birthdate.getMonth() + 1;
+        const day = birthdate.getDate();
+
+        let sign = "";
+
+        if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
+            sign = "capricornio";
+        } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
+            sign = "acuario";
+        } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+            sign = "piscis";
+        } else if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
+            sign = "aries";
+        } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
+            sign = "tauro";
+        } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+            sign = "gemini";
+        } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+            sign = "cancer";
+        } else if ((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
+            sign = "leo";
+        } else if ((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
+            sign = "virgo";
+        } else if ((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
+            sign = "libra";
+        } else if ((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
+            sign = "escorpio";
+        } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
+            sign = "sagitario";
+        }
+
+        const signImage = document.getElementById("sign-image");
+        signImage.src = `${sign}.png`;
+        signImage.classList.add("show");
+
+        setTimeout(() => {
+            signImage.classList.remove("show");
+        }, 3000);
     }
 </script>
 
