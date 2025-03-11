@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Cancer</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-top: 15vh;
+        }
+        h1 {
+            font-size: 3em;
+            color: #00BFFF;
+            text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+            animation: grow-shrink 2s infinite alternate ease-in-out;
+        }
+        .description {
+            margin: 20px auto;
+            width: 60%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border: 5px solid #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            animation: glow 2s infinite alternate ease-in-out;
+            cursor: pointer;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #007BFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .back-button a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
+        @keyframes grow-shrink {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="14561-258207720_tiny.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <div class="back-button">
+        <a href="index.html"> . </a>
+    </div>
+    <div class="content">
+        <h1>Cancer</h1>
+        <div class="description">
+            <p>Antes de tomar esa decisión trascendental para su vida, intente tomar las precauciones necesarias. Podría surgir algún riesgo si no actúa de forma responsable.</p>
+            <p><strong>Amor:</strong> Después de tantas relaciones malas, al fin encontrará al amor de su vida del que tanto soñó. Prepárese, ya que se enamorará de esa persona sin pensarlo.</p>
+            <p><strong>Riqueza:</strong> Si se encuentra sin trabajo, hoy será un día óptimo para buscar y encontrar un empleo. Por más que no sea del rubro que usted quiere, postúlese.</p>
+            <p><strong>Bienestar:</strong> Prepárese, ya que será un momento excelente para aplicar la expresión artística en su vida. Pruebe incursionando con la música, la literatura y el arte.</p>
+        </div>
+        <audio id="audio" src="internal-turbulence-of-spacecraft-fnx-sound-290552.mp3" type="audio/mpeg" loop></audio>
+        <div class="image-container">
+            <img src="https://media.lmneuquen.com/p/0b7829c38a5309bc552225c33f62bdfa/adjuntos/195/imagenes/007/629/0007629834/770x0/smart/horoscopo-negro-cancerjpg.jpg" alt="Horóscopo Cáncer" onclick="toggleAudio()">
+        </div>
+    </div>
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

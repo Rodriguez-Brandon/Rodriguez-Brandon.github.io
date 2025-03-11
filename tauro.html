@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Tauro</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-top: 15vh;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff2282;
+            text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+            animation: grow-shrink 2s infinite alternate ease-in-out;
+        }
+        .description {
+            margin: 20px auto;
+            width: 60%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border: 5px solid #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            animation: glow 2s infinite alternate ease-in-out;
+            cursor: pointer;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #3f2282;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .back-button a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
+        @keyframes grow-shrink {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="https://cdn.pixabay.com/video/2022/02/10/107308-676158771_tiny.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <div class="back-button">
+        <a href="index.html"> < </a>
+    </div>
+    <div class="content">
+        <h1>Tauro</h1>
+        <div class="description">
+            <p>Seguramente se sentirá relajado, ya que se ha librado de viejas ataduras y dependencias que lo limitaban para tomar una propia determinación.</p>
+            <p><strong>Amor:</strong> Controle sus ansias de dominio, de lo contrario, podrían surgir discusiones familiares que podrían terminar muy mal. Intente ser más paciente.</p>
+            <p><strong>Riqueza:</strong> Prepárese y enfóquese en muchos de los nuevos negocios que le ofrecieron hace poco, ya que le generarán demasiada abundancia monetaria y prosperidad.</p>
+            <p><strong>Bienestar:</strong> Esquive los problemas que se interponen en su vida y le afectan negativamente. Procure liberarse de todas las personas que lo molestan y no lo dejan en paz.</p>
+        </div>
+        <audio id="audio" src="internal-turbulence-of-spacecraft-fnx-sound-290552.mp3" type="audio/mpeg" loop></audio>
+        <div class="image-container">
+            <img src="https://st1.uvnimg.com/7d/b6/0b9c5bfe4423831a2dc1fa136993/dcd2fd27677e4fdf9748ebe6325295f7" alt="Horóscopo Cáncer" onclick="toggleAudio()">
+        </div>
+    </div>
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

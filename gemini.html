@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Gemini</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-top: 15vh;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff2282;
+            text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+            animation: grow-shrink 2s infinite alternate ease-in-out;
+        }
+        .description {
+            margin: 20px auto;
+            width: 60%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border: 5px solid #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            animation: glow 2s infinite alternate ease-in-out;
+            cursor: pointer;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #3f2282;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .back-button a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
+        @keyframes grow-shrink {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="https://cdn.pixabay.com/video/2022/02/10/107308-676158771_tiny.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <div class="back-button">
+        <a href="index.html"> < </a>
+    </div>
+    <div class="content">
+        <h1>Géminis</h1>
+        <div class="description">
+            <p>Durante esta jornada se enfrentará con situaciones difíciles que le exigirán al máximo de su concentración. Sea paciente y piense bien antes actuar.</p>
+            <p><strong>Amor:</strong> Utilice un diálogo sincero cuando se comunique. Será un buen momento para modificar ciertos temas que afectan su vínculo de pareja con su familia.</p>
+            <p><strong>Riqueza:</strong> Realice cálculos y evite gastar en forma desmedida, de lo contario, no podrá cubrir las deudas. Hágase una lista de los productos que necesita antes de ir a comprar.</p>
+            <p><strong>Bienestar:</strong> Reconozca sus limites físicos y tome precauciones para no salir más perjudicado. Si se siente desbordado por sus responsabilidades, pare antes que sea tarde.</p>
+        </div>
+        <audio id="audio" src="internal-turbulence-of-spacecraft-fnx-sound-290552.mp3" type="audio/mpeg" loop></audio>
+        <div class="image-container">
+            <img src="https://img.freepik.com/fotos-premium/signo-zodiaco-geminis-icono-geminis-sobre-fondo-azul-espacio-circulo-zodiaco-sobre-fondo-azul-oscuro-espacio_101969-2591.jpg" alt="Horóscopo Cáncer" onclick="toggleAudio()">
+        </div>
+    </div>
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Acuario</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-top: 15vh;
+        }
+        h1 {
+            font-size: 3em;
+            color: #00BFFF;
+            text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+            animation: grow-shrink 2s infinite alternate ease-in-out;
+        }
+        .description {
+            margin: 20px auto;
+            width: 60%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border: 5px solid #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            animation: glow 2s infinite alternate ease-in-out;
+            cursor: pointer;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #007BFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .back-button a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
+        @keyframes grow-shrink {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="14561-258207720_tiny.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <div class="back-button">
+        <a href="index.html"> < </a>
+    </div>
+    <div class="content">
+        <h1>Acuario</h1>
+        <div class="description">
+            <p>Encuentre las soluciones precisas a los inconvenientes financieros que están apareciendo últimamente. Relájese, el resto de los problemas se irán arreglando solos.</p>
+            <p><strong>Amor:</strong> Si pensó en tomar una decisión importante en su relación amorosa, este día tendrá la mejor oportunidad para poner en acción lo que pensó hace días.</p>
+            <p><strong>Riqueza:</strong> Momento ideal para detenerse en las razones que lo acarrean últimamente a gastar en exceso. Antes de comprar piense si realmente lo necesita.</p>
+            <p><strong>Bienestar:</strong> Sepa que es un día perfecto para asistir a algún espectáculo artístico junto a algún amigo. En caso que lo inviten, acepte la invitación sin dudarlo.</p>
+        </div>
+        <audio id="audio" src="internal-turbulence-of-spacecraft-fnx-sound-290552.mp3" type="audio/mpeg" loop></audio>
+        <div class="image-container">
+            <img src="https://png.pngtree.com/background/20210717/original/pngtree-aquarius-constellation-in-space-with-zodiac-characters-picture-image_1423800.jpg" alt="Horóscopo Cáncer" onclick="toggleAudio()">
+        </div>
+    </div>
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

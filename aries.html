@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Aries</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-top: 15vh;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff2282;
+            text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+            animation: grow-shrink 2s infinite alternate ease-in-out;
+        }
+        .description {
+            margin: 20px auto;
+            width: 60%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border: 5px solid #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            animation: glow 2s infinite alternate ease-in-out;
+            cursor: pointer;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #3f2282;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .back-button a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
+        @keyframes grow-shrink {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="https://cdn.pixabay.com/video/2022/02/10/107308-676158771_tiny.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <div class="back-button">
+        <a href="index.html"> < </a>
+    </div>
+    <div class="content">
+        <h1>Aries</h1>
+        <div class="description">
+            <p>Etapa para liberarse de los falsos compromisos y concentrarse en los genuinos que involucran su seguridad interna. Revea cuales son sus prioridades.</p>
+            <p><strong>Amor:</strong> Ciertas tensiones acumuladas lo empujaran a tomar distancia de su pareja. Revierta la situación a la brevedad, caso contrario, terminará en una ruptura.</p>
+            <p><strong>Riqueza:</strong> Sepa que su sexto sentido lo ayudará en la toma de esas decisiones importantes dentro del ámbito profesional. Aplíquelo siempre que lo necesite.</p>
+            <p><strong>Bienestar:</strong> Encuentre la solución a muchas de sus inquietudes. Una terapia psicológica podría ser de gran ayuda. Llame a su profesional y tome una sesión on line.</p>
+        </div>
+        <audio id="audio" src="internal-turbulence-of-spacecraft-fnx-sound-290552.mp3" type="audio/mpeg" loop></audio>
+        <div class="image-container">
+            <img src="https://wallpapercat.com/w/full/3/6/7/908344-1920x1080-desktop-full-hd-aries-zodiac-sign-wallpaper-photo.jpg" alt="Horóscopo Cáncer" onclick="toggleAudio()">
+        </div>
+    </div>
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById('audio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>
